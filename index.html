@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LeSentier</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/user.style.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/slick.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.3/jquery.fullPage.min.css" type="text/css">
+</head>
+<body class="map-fullscreen page-homepage navigation-off-canvas">
+
+  <div class="preloader">
+    <div class="inner-preloader">
+
+      <div class="container-back">
+        <div class="inner-container-back">
+          <div class="content-container-back">
+            <span data-load="lesentier">lesentier</span>
+          </div>
+        </div>
+        <h3 class="cd-headline clip is-full-width" style="visibility:hidden;">
+          <g>Connecteur d'innovation</g>
+          <g class="cd-words-wrapper">
+            <b class="">digitale</b>
+            <b class="">sociale</b>
+            <b class="">artistique</b>
+            <b class="">scientifique</b>
+          </g>
+        </h3>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="bg-box part-0 replacement-bg-youtube bg-youtube-video">
+    <div class="overlay"></div>
+  </div>
+
+  <div id="fullpage">
+
+    <div class="section">
+
+      <div class="container-back back-title">
+        <div class="inner-container-back">
+          <div class="content-container-back">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-10">
+                  <h2 class="page-title">
+                    <span>Take</span>
+                    <br class="hidden-br"><span>the</span>
+                    <br class="hidden-br"><span>To</span><span>ur</span>
+                  </h2>
+                </div>
+                <div class="col-xs-1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-title">
+
+        <h1>lesentier</h1>
+
+        <h3 class="cd-headline clip is-full-width">
+          <span>Connecteur d'innovation</span>
+          <span class="cd-words-wrapper">
+            <b class="is-visible">digitale</b>
+            <b class="is-hidden">sociale</b>
+            <b class="is-hidden">artistique</b>
+            <b class="is-hidden">scientifique</b>
+          </span>
+        </h3>
+      </div>
+
+    </div>
+
+    <div class="section">
+
+      <div class="overlay-content">
+        <h1 class="page-title">A PROPOS</h1>
+        <p>"Le Sentier" a pour mission de créer des ponts entre les lieux d'innovation du quartier, afin d'en favoriser l'exploration.</p>
+      </div>
+      <div class="bg-box la-verite">
+        <div class="overlay"></div>
+      </div>
+
+    </div>
+
+    <div class="section">
+      <div class="map-canvas">
+        <!-- Map -->
+        <div class="map">
+          <div id="map" class="has-parallax"></div>
+        </div>
+
+        <div class="map-logo">
+          <h2>lesentier</h2>
+
+          <p class="btn-next-slide">
+            <i class="glyphicon glyphicon-chevron-down"></i>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section">
+
+      <h1 class="page-title">Les lieux</h1>
+      <div class="partners-slider">
+        <a class="partners-item" href=""><img src="/assets/lapaillasse.jpeg"></a>
+        <a class="partners-item" href=""><img src="/assets/creatis.png"></a>
+        <a class="partners-item" href=""><img src="/assets/logoplayer.png"></a>
+        <a class="partners-item" href=""><img src="/assets/ref-13-numa.png"></a>
+      </div>
+
+      <h1 class="page-title">Ils nous soutiennent</h1>
+      <div class="partners-slider">
+        <a class="partners-item" href=""><img src="/assets/lapaillasse.jpeg"></a>
+        <a class="partners-item" href=""><img src="/assets/creatis.png"></a>
+        <a class="partners-item" href=""><img src="/assets/logoplayer.png"></a>
+        <a class="partners-item" href=""><img src="/assets/ref-13-numa.png"></a>
+      </div>
+
+      <p>Contact</p>
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+  <script type="text/javascript" src="assets/js/infobox.js"></script>
+  <script type="text/javascript" src="assets/js/richmarker-compiled.js"></script>
+  <script type="text/javascript" src="assets/js/markerclusterer.js"></script>
+  <script type="text/javascript" src="assets/js/custom.js"></script>
+  <script type="text/javascript" src="assets/js/maps.js"></script>
+  <script type="text/javascript" src="assets/js/slick.min.js"></script>
+  <script type="text/javascript" src="assets/js/tubular.js"></script>
+  <script type="text/javascript" src="assets/js/animated-tagline.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.3/jquery.fullPage.min.js"></script>
+
+  <script>
+
+    $(window).load(function(){
+
+      $('.preloader').addClass('full')
+      // Preloader
+      setTimeout(function(){
+        $('.preloader').fadeOut('slow',function(){$(this).remove();});
+      }, 500);
+
+    });
+
+    $(document).ready(function() {
+
+      /* Slick
+      ----------------------------------------------------------------------*/
+      $('.partners-slider').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1
+      });
+
+      /* Video Youtube
+      ----------------------------------------------------------------------*/
+      if($(".bg-youtube-video").length>0) {
+
+        $('.bg-youtube-video .overlay').tubular({
+          //videoId: 'NgjaTlCWjJc?list=UUQJ-o5gNpMg8mQ9eVJUkkWQ',
+          videoId: 'OWbptCngmSQ',
+          start: 3,
+          mute: true
+        });
+      }
+      $('#fullpage').fullpage({
+        navigation: true,
+        navigationPosition: 'right',
+        navigationTooltips: ['Home', 'Map', 'Partners and contacts'],
+        scrollOverflow: true
+      });
+
+      $('.btn-next-slide').on('click', function () {
+        $.fn.fullpage.moveSectionDown();
+      });
+
+      /* start preloader */
+      $('.preloader').addClass('startLoad')
+
+
+      var _latitude = 48.867636;
+      var _longitude = 2.351317;
+      var jsonPath = 'assets/json/items.json.txt';
+
+      var json = {
+        "data": [{
+          "id": 1,
+          "category": "real_estate",
+          "title": "NUMA",
+          "location": "39 Rue du Caire",
+          "latitude": 48.8676918,
+          "longitude": 2.3497565,
+          "url": "item-detail.html",
+          "type": "Tech",
+          "type_icon": "assets/noir-big.jpg",
+          "gallery":[
+            "http://placehold.it/300x200",
+            "http://placehold.it/300x200"
+          ],
+          "features":[
+            "Free Parking",
+            "Cards Accepted",
+            "Wi-Fi",
+            "Air Condition",
+            "Reservations",
+            "Teambuildings",
+            "Places to seat"
+          ],
+          "date_created": "2014-11-03",
+          // "price": "$2500",
+          "featured": 0,
+          "color": "",
+          "person_id": 1,
+          "year": 1980,
+          "special_offer": 0,
+          "item_specific":{
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "rooms": 4,
+            "garages": 1,
+            "area": 240
+          },
+          "description": "Curabitur odio nibh, luctus non pulvinar a, ultricies ac diam. Donec neque massa, viverra interdum eros ut, imperdiet pellentesque mauris. Proin sit amet scelerisque risus. Donec semper semper erat ut mollis. Curabitur suscipit, justo eu dignissim lacinia, ante sapien pharetra duin consectetur eros augue sed ex. Donec a odio rutrum, hendrerit sapien vitae, euismod arcu.",
+          "last_review": "Curabitur odio nibh, luctus non pulvinar a, ultricies ac diam. Donec neque massa, viverra interdum eros ut, imperdiet",
+          "last_review_rating": 5
+        },
+        {
+          "id": 2,
+          "category": "bar_restaurant",
+          "title": "PLAYER",
+          "location": "16 Rue du Caire",
+          "latitude": 48.8675012,
+          "longitude": 2.3512478,
+          "url": "item-detail.html",
+          "type": "Intelligence collaborative",
+          "type_icon": "assets/player-small.png",
+          "rating": 5,
+          "price": "NEW",
+          "gallery":[
+            "http://placehold.it/300x200"
+          ],
+          "color": "",
+          "item_specific":{
+            "menu": "$6.50",
+            "offer1": "Chicken wings",
+            "offer1_price": "4.50",
+            "offer2": "Mushroom ragout",
+            "offer2_price": "3.60",
+            "offer3": "Nice salad with tuna, beans and hard-boiled egg",
+            "offer3_price": "1.20"
+          }
+        },
+        {
+          "id": 3,
+          "title": "La Paillasse",
+          "category": "real_estate",
+          "location": "226 Rue Saint-Denis",
+          "latitude": 48.868451,
+          "longitude": 2.352168,
+          "url": "item-detail.html",
+          "type": "FabLab",
+          "type_icon": "assets/lapaillasse.jpeg",
+          "rating": 2,
+          "gallery":[
+            "http://placehold.it/300x200"
+          ],
+          "color": ""
+        },
+        {
+          "id": 4,
+          "title": "Créatis",
+          "location": "3 Rue Papin",
+          "latitude": 48.866876,
+          "longitude": 2.354024,
+          "url": "item-detail.html",
+          "type": "Co-working",
+          "type_icon": "assets/creatis.png",
+          "rating": 0,
+          "gallery":[
+            "http://placehold.it/300x200"
+          ],
+          "color": ""
+        }]
+      };
+
+      // Load JSON data and create Google Maps
+      createHomepageGoogleMap(_latitude, _longitude, json);
+
+    });
+  </script>
+
+</body>
+</html>

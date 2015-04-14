@@ -1,0 +1,62 @@
+.preloader {
+  background: $bgPreloader;
+  height: 100%;
+  left: 0;
+  position:fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999999;
+
+  .inner-preloader {
+    height: 100%;
+    width: 100%;
+
+      span {
+      color: $bgPreloaderText;
+      display: inline-block;
+      font-family: 'kilogramregular';
+      font-size: 10em;
+      letter-spacing: 1px;
+      outline: none;
+      padding: 10px 0;
+      position: relative;
+      text-transform: uppercase;
+
+        &::before {
+        color: $myTurquoise;
+        content: attr(data-load);
+        left: 0;
+        max-width: 0%;
+        overflow: hidden;
+        padding: 10px 0;
+        position: absolute;
+        top: 0;
+        transition: max-width 15s;
+
+      }
+      &::after {
+        color: $myTurquoise;
+        content: attr(data-load);
+        left: 0;
+        max-width: 0%;
+        overflow: hidden;
+        padding: 10px 0;
+        position: absolute;
+        top: 0;
+        transition: max-width 0.5s;
+      }
+
+    }
+  }
+  &.startLoad .inner-preloader span{
+    &::before{
+      max-width: 80%;
+    }
+  }
+
+  &.full .inner-preloader span{
+    &::after{
+      max-width: 100%;
+    }
+  }
+}
