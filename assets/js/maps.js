@@ -69,7 +69,15 @@ function drawInfobox(category, infoboxContent, json, i){
 }
 
 function createHomepageGoogleMap(_latitude,_longitude,json){
-  gMap();
+  if (google.maps) {
+    console.log('Google loaded');
+    gMap();
+  } else {
+    console.log('Google loading');
+    setTimeout(function () {
+      createHomepageGoogleMap(_latitude,_longitude,json);
+    }, 100);
+  }
 
   function gMap(){
     var mapCenter = new google.maps.LatLng(_latitude, _longitude);
@@ -268,51 +276,51 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
 
       // Create list of items in Results sidebar ---------------------------------------------------------------------
 
-      $('.items-list .results').html( visibleItemsArray );
+      // $('.items-list .results').html( visibleItemsArray );
 
       // Check if images are cached, so will not be loaded again
 
-      $.each(json.data, function(a) {
-        if( map.getBounds().contains( new google.maps.LatLng( json.data[a].latitude, json.data[a].longitude ) ) ) {
-          is_cached(json.data[a].gallery[0], a);
-        }
-      });
+      // $.each(json.data, function(a) {
+      //   if( map.getBounds().contains( new google.maps.LatLng( json.data[a].latitude, json.data[a].longitude ) ) ) {
+      //     is_cached(json.data[a].gallery[0], a);
+      //   }
+      // });
 
       // Call Rating function ----------------------------------------------------------------------------------------
 
-      var $singleItem = $('.results .item');
-      $singleItem.hover(
-        function(){
-          newMarkers[ $(this).attr('id') - 1 ].content.className = 'marker-active marker-loaded';
-        },
-        function() {
-          newMarkers[ $(this).attr('id') - 1 ].content.className = 'marker-loaded';
-        }
-      );
+      // var $singleItem = $('.results .item');
+      // $singleItem.hover(
+      //   function(){
+      //     newMarkers[ $(this).attr('id') - 1 ].content.className = 'marker-active marker-loaded';
+      //   },
+      //   function() {
+      //     newMarkers[ $(this).attr('id') - 1 ].content.className = 'marker-loaded';
+      //   }
+      // );
     });
 
     redrawMap('google', map);
 
-    function is_cached(src, a) {
-      var image = new Image();
-      var loadedImage = $('.results li #' + json.data[a].id + ' .image');
-      image.src = src;
-      if( image.complete ){
-        $(".results").each(function() {
-          loadedImage.removeClass('loading');
-          loadedImage.addClass('loaded');
-        });
-      }
-      else {
-        $(".results").each(function() {
-          $('.results li #' + json.data[a].id + ' .image').addClass('loading');
-        });
-        $(image).load(function(){
-          loadedImage.removeClass('loading');
-          loadedImage.addClass('loaded');
-        });
-      }
-    }
+    // function is_cached(src, a) {
+    //   var image = new Image();
+    //   var loadedImage = $('.results li #' + json.data[a].id + ' .image');
+    //   image.src = src;
+    //   if( image.complete ){
+    //     $(".results").each(function() {
+    //       loadedImage.removeClass('loading');
+    //       loadedImage.addClass('loaded');
+    //     });
+    //   }
+    //   else {
+    //     $(".results").each(function() {
+    //       $('.results li #' + json.data[a].id + ' .image').addClass('loading');
+    //     });
+    //     $(image).load(function(){
+    //       loadedImage.removeClass('loading');
+    //       loadedImage.addClass('loaded');
+    //     });
+    //   }
+    // }
 
     // Geolocation of user -----------------------------------------------------------------------------------------
 
@@ -347,36 +355,36 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
 
     // Autocomplete address ----------------------------------------------------------------------------------------
 
-    var input = document.getElementById('location') ;
-    var autocomplete = new google.maps.places.Autocomplete(input, {
-      types: ["geocode"]
-    });
-    autocomplete.bindTo('bounds', map);
-    google.maps.event.addListener(autocomplete, 'place_changed', function() {
-      var place = autocomplete.getPlace();
-      if (!place.geometry) {
-        return;
-      }
-      if (place.geometry.viewport) {
-        map.fitBounds(place.geometry.viewport);
-        map.setZoom(14);
-      } else {
-        map.setCenter(place.geometry.location);
-        map.setZoom(14);
-      }
+    // var input = document.getElementById('location') ;
+    // var autocomplete = new google.maps.places.Autocomplete(input, {
+    //   types: ["geocode"]
+    // });
+    // autocomplete.bindTo('bounds', map);
+    // google.maps.event.addListener(autocomplete, 'place_changed', function() {
+    //   var place = autocomplete.getPlace();
+    //   if (!place.geometry) {
+    //     return;
+    //   }
+    //   if (place.geometry.viewport) {
+    //     map.fitBounds(place.geometry.viewport);
+    //     map.setZoom(14);
+    //   } else {
+    //     map.setCenter(place.geometry.location);
+    //     map.setZoom(14);
+    //   }
 
-      //marker.setPosition(place.geometry.location);
-      //marker.setVisible(true);
+    //   //marker.setPosition(place.geometry.location);
+    //   //marker.setVisible(true);
 
-      var address = '';
-      if (place.address_components) {
-        address = [
-          (place.address_components[0] && place.address_components[0].short_name || ''),
-          (place.address_components[1] && place.address_components[1].short_name || ''),
-          (place.address_components[2] && place.address_components[2].short_name || '')
-        ].join(' ');
-      }
-    });
+    //   var address = '';
+    //   if (place.address_components) {
+    //     address = [
+    //       (place.address_components[0] && place.address_components[0].short_name || ''),
+    //       (place.address_components[1] && place.address_components[1].short_name || ''),
+    //       (place.address_components[2] && place.address_components[2].short_name || '')
+    //     ].join(' ');
+    //   }
+    // });
 
 
   }
@@ -386,146 +394,146 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
 // OpenStreetMap - Homepage
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function createHomepageOSM(_latitude,_longitude,json,mapProvider){
+// function createHomepageOSM(_latitude,_longitude,json,mapProvider){
 
-  $.get("assets/external/_infobox.js", function() {
-    osmMap();
-  });
+//   $.get("assets/external/_infobox.js", function() {
+//     osmMap();
+//   });
 
-  function osmMap(){
-    var map = L.map('map', {
-        center: [_latitude,_longitude],
-        zoom: 14,
-        scrollWheelZoom: false
-    });
+//   function osmMap(){
+//     var map = L.map('map', {
+//         center: [_latitude,_longitude],
+//         zoom: 14,
+//         scrollWheelZoom: false
+//     });
 
-    L.tileLayer.provider(mapProvider).addTo(map);
+//     L.tileLayer.provider(mapProvider).addTo(map);
 
-    var markers = L.markerClusterGroup({
-      showCoverageOnHover: false,
-      zoomToBoundsOnClick: false
-    });
+//     var markers = L.markerClusterGroup({
+//       showCoverageOnHover: false,
+//       zoomToBoundsOnClick: false
+//     });
 
-    var loadedMarkers = [];
+//     var loadedMarkers = [];
 
-    // Create markers on the map -----------------------------------------------------------------------------------
+//     // Create markers on the map -----------------------------------------------------------------------------------
 
-    for (var i = 0; i < json.data.length; i++) {
+//     for (var i = 0; i < json.data.length; i++) {
 
-      // Set icon for marker -------------------------------------------------------------------------------------
+//       // Set icon for marker -------------------------------------------------------------------------------------
 
-      if( json.data[i].type_icon ) var icon = '<img src="' + json.data[i].type_icon +  '">';
-      else icon = '';
+//       if( json.data[i].type_icon ) var icon = '<img src="' + json.data[i].type_icon +  '">';
+//       else icon = '';
 
-      if( json.data[i].color ) var color = json.data[i].color;
-      else color = '';
+//       if( json.data[i].color ) var color = json.data[i].color;
+//       else color = '';
 
-      var markerContent =
-        '<div class="map-marker ' + color + '">' +
-          '<div class="icon">' +
-          icon +
-          '</div>' +
-        '</div>';
+//       var markerContent =
+//         '<div class="map-marker ' + color + '">' +
+//           '<div class="icon">' +
+//           icon +
+//           '</div>' +
+//         '</div>';
 
-      var _icon = L.divIcon({
-        html: markerContent,
-        iconSize:     [36, 46],
-        iconAnchor:   [18, 32],
-        popupAnchor:  [130, -28],
-        className: ''
-      });
+//       var _icon = L.divIcon({
+//         html: markerContent,
+//         iconSize:     [36, 46],
+//         iconAnchor:   [18, 32],
+//         popupAnchor:  [130, -28],
+//         className: ''
+//       });
 
-      var title = json.data[i].title;
-      var marker = L.marker(new L.LatLng( json.data[i].latitude, json.data[i].longitude ), {
-        title: title,
-        icon: _icon
-      });
+//       var title = json.data[i].title;
+//       var marker = L.marker(new L.LatLng( json.data[i].latitude, json.data[i].longitude ), {
+//         title: title,
+//         icon: _icon
+//       });
 
-      loadedMarkers.push(marker);
+//       loadedMarkers.push(marker);
 
-      // Infobox HTML element ------------------------------------------------------------------------------------
+//       // Infobox HTML element ------------------------------------------------------------------------------------
 
-      var category = json.data[i].category;
-      var infoboxContent = document.createElement("div");
-      marker.bindPopup(
-        drawInfobox(category, infoboxContent, json, i)
-      );
-      markers.addLayer(marker);
+//       var category = json.data[i].category;
+//       var infoboxContent = document.createElement("div");
+//       marker.bindPopup(
+//         drawInfobox(category, infoboxContent, json, i)
+//       );
+//       markers.addLayer(marker);
 
-      // Set hover states for marker -----------------------------------------------------------------------------
+//       // Set hover states for marker -----------------------------------------------------------------------------
 
-      marker.on('popupopen', function () {
-        this._icon.className += ' marker-active';
-      });
-      marker.on('popupclose', function () {
-        this._icon.className = 'leaflet-marker-icon leaflet-zoom-animated leaflet-clickable marker-loaded';
-      });
+//       marker.on('popupopen', function () {
+//         this._icon.className += ' marker-active';
+//       });
+//       marker.on('popupclose', function () {
+//         this._icon.className = 'leaflet-marker-icon leaflet-zoom-animated leaflet-clickable marker-loaded';
+//       });
 
-    }
+//     }
 
-    map.addLayer(markers);
+//     map.addLayer(markers);
 
-    // Animate already created markers -----------------------------------------------------------------------------
+//     // Animate already created markers -----------------------------------------------------------------------------
 
-    animateOSMMarkers(map, loadedMarkers, json);
-    map.on('moveend', function() {
-      animateOSMMarkers(map, loadedMarkers, json);
-    });
+//     animateOSMMarkers(map, loadedMarkers, json);
+//     map.on('moveend', function() {
+//       animateOSMMarkers(map, loadedMarkers, json);
+//     });
 
-    markers.on('clusterclick', function (a) {
+//     markers.on('clusterclick', function (a) {
 
-      var markersInCLuster = a.layer.getAllChildMarkers();
-      var latitudeArray = [];
-      var longitudeArray = [];
+//       var markersInCLuster = a.layer.getAllChildMarkers();
+//       var latitudeArray = [];
+//       var longitudeArray = [];
 
-      for (var b=0; b < markersInCLuster.length; b++)
-      {
-        var formattedLatitude = parseFloat( markersInCLuster[b]._latlng.lat ).toFixed(6);
-        var formattedLongitude = parseFloat( markersInCLuster[b]._latlng.lng ).toFixed(6);
-        latitudeArray.push( formattedLatitude );
-        longitudeArray.push( formattedLongitude );
-      }
+//       for (var b=0; b < markersInCLuster.length; b++)
+//       {
+//         var formattedLatitude = parseFloat( markersInCLuster[b]._latlng.lat ).toFixed(6);
+//         var formattedLongitude = parseFloat( markersInCLuster[b]._latlng.lng ).toFixed(6);
+//         latitudeArray.push( formattedLatitude );
+//         longitudeArray.push( formattedLongitude );
+//       }
 
-      Array.prototype.allValuesSame = function() {
-        for(var i = 1; i < this.length; i++)
-        {
-          if(this[i] !== this[0])
-            return false;
-        }
-        return true;
-      };
+//       Array.prototype.allValuesSame = function() {
+//         for(var i = 1; i < this.length; i++)
+//         {
+//           if(this[i] !== this[0])
+//             return false;
+//         }
+//         return true;
+//       };
 
-      if( latitudeArray.allValuesSame() && longitudeArray.allValuesSame() ){
-        multiChoice(latitudeArray[0], longitudeArray[0], json);
-      }
-      else {
-        a.layer.zoomToBounds();
-      }
-    });
+//       if( latitudeArray.allValuesSame() && longitudeArray.allValuesSame() ){
+//         multiChoice(latitudeArray[0], longitudeArray[0], json);
+//       }
+//       else {
+//         a.layer.zoomToBounds();
+//       }
+//     });
 
-    $('.results .item').hover(
-      function(){
-        loadedMarkers[ $(this).attr('id') - 1 ]._icon.className = 'leaflet-marker-icon leaflet-zoom-animated leaflet-clickable marker-loaded marker-active';
-      },
-      function() {
-        loadedMarkers[ $(this).attr('id') - 1 ]._icon.className = 'leaflet-marker-icon leaflet-zoom-animated leaflet-clickable marker-loaded';
-      }
-    );
+//     $('.results .item').hover(
+//       function(){
+//         loadedMarkers[ $(this).attr('id') - 1 ]._icon.className = 'leaflet-marker-icon leaflet-zoom-animated leaflet-clickable marker-loaded marker-active';
+//       },
+//       function() {
+//         loadedMarkers[ $(this).attr('id') - 1 ]._icon.className = 'leaflet-marker-icon leaflet-zoom-animated leaflet-clickable marker-loaded';
+//       }
+//     );
 
 
-    $('.geolocation').on("click", function() {
-      map.locate({setView : true})
-    });
+//     $('.geolocation').on("click", function() {
+//       map.locate({setView : true})
+//     });
 
-    $('body').addClass('loaded');
-    setTimeout(function() {
-      $('body').removeClass('has-fullscreen-map');
-    }, 1000);
-    $('#map').removeClass('fade-map');
+//     $('body').addClass('loaded');
+//     setTimeout(function() {
+//       $('body').removeClass('has-fullscreen-map');
+//     }, 1000);
+//     $('#map').removeClass('fade-map');
 
-    redrawMap('osm', map);
-  }
-}
+//     redrawMap('osm', map);
+//   }
+// }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Item Detail Map - Google

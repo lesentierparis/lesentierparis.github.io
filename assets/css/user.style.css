@@ -209,20 +209,79 @@ body {
 }
 
 /* Partner slider */
-.partners-slider {
-  max-width: 650px;
+.partners .page-title {
+  color: #fff;
+}
+.partners-wrapper {
+  position: relative;
+  max-width: 1020px;
   margin: 0 auto;
+  padding: 0 30px;
+}
+
+.partners-slider {
+
 }
 .partners-item {
+  text-align: center;
   line-height: 160px;
 }
 a.partners-item img {
   display: inline-block;
 }
 
+.partners-prev,
+.partners-next {
+  font-size: 20px;
+  line-height: 1.2;
+  position: absolute;
+    top: 50%;
+  margin-top: -10px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  opacity: .6;
+  -webkit-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+.partners-prev:hover,
+.partners-next:hover {
+  opacity: 1;
+}
+.partners-prev {
+  left: 0px;
+}
+.partners-next {
+  right: 0px;
+}
+
+.partners-footer {
+  text-align: center;
+  position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  background: rgba(219, 76, 34, 0.8);
+  margin: 0;
+  padding: 20px;
+  color: #fff;
+}
+.partners-footer h2 {
+  font-family: 'kilogramregular', sans-serif;
+  color: white;
+  margin: 0;
+  letter-spacing: 1px;
+  outline: none;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.partners-footer .contact-infos {
+  color: #fff;
+}
+
 /* La verite */
 .la-verite {
-  background: url(/assets/images/la_verite.jpeg);
+  background: url(../images/la_verite.jpeg);
   background-position: center center;
 }
 .la-verite .overlay {

@@ -28,14 +28,14 @@ gulp.task('connect', function() {
 });
 
 // SCSS tasks
-gulp.task('css', function() {
-  return gulp.src('./assets/scss/style.scss')
-    .pipe( plumber() )
-    .pipe( sass() )
-    .pipe( gulp.dest('./assets/css') )
-    .pipe( connect.reload() )
-    // .pipe( notify('CSS task complete!') )
-});
+// gulp.task('css', function() {
+//   return gulp.src('./assets/scss/style.scss')
+//     .pipe( plumber() )
+//     .pipe( sass() )
+//     .pipe( gulp.dest('./assets/css') )
+//     .pipe( connect.reload() )
+//     // .pipe( notify('CSS task complete!') )
+// });
 
 gulp.task('uncss', function() {
   return gulp.src('./build/css/*.css')
@@ -105,7 +105,7 @@ gulp.task('html', function() {
 
 /* Default task */
 gulp.task('default', ['connect', 'watch'], function() {
-  gulp.start('css'/*, 'js'*/);
+  // gulp.start('css'/*, 'js'*/);
 });
 
 /* Build static resources */

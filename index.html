@@ -114,25 +114,39 @@
       </div>
     </div>
 
-    <div class="section">
+    <div class="section partners">
 
-      <h1 class="page-title">Les lieux</h1>
-      <div class="partners-slider">
-        <a class="partners-item" href=""><img src="/assets/lapaillasse.jpeg"></a>
-        <a class="partners-item" href=""><img src="/assets/creatis.png"></a>
-        <a class="partners-item" href=""><img src="/assets/logoplayer.png"></a>
-        <a class="partners-item" href=""><img src="/assets/ref-13-numa.png"></a>
+      <h1 class="page-title">Les partenaires</h1>
+      <div class="partners-wrapper">
+        <div class="partners-slider">
+          <a href="https://www.numa.paris/" class="partners-item" target="_blank"><img src="assets/ref-13-numa.png"></a>
+          <a href="http://lapaillasse.org/" class="partners-item" target="_blank"><img src="assets/lapaillasse.jpeg"></a>
+          <a href="http://player.paris/" class="partners-item" target="_blank"><img src="assets/logoplayer.png"></a>
+          <a href="http://www.residencecreatis.fr/" class="partners-item" target="_blank"><img src="assets/creatis.png"></a>
+        </div>
+
+        <button class="partners-prev"><i class="glyphicon glyphicon-chevron-left"></i></button>
+        <button class="partners-next"><i class="glyphicon glyphicon-chevron-right"></i></button>
       </div>
 
-      <h1 class="page-title">Ils nous soutiennent</h1>
-      <div class="partners-slider">
-        <a class="partners-item" href=""><img src="/assets/lapaillasse.jpeg"></a>
-        <a class="partners-item" href=""><img src="/assets/creatis.png"></a>
-        <a class="partners-item" href=""><img src="/assets/logoplayer.png"></a>
-        <a class="partners-item" href=""><img src="/assets/ref-13-numa.png"></a>
+      <div class="partners-footer">
+        <h2>Contact</h2>
+
+        <a class="contact-infos" href="https://twitter.com/meetlesentier">
+          @meetlesentier
+        </a>
+        |
+        <a class="contact-infos" href="tel:+33625320678">
+          <i class="glyphicon glyphicon-earphone"></i>
+          06 25 32 06 78
+        </a>
+        |
+        <a class="contact-infos" href="mailto:sofian@lesentier.paris">
+          <i class="glyphicon glyphicon-envelope"></i>
+          sofian@lesentier.paris
+        </a>
       </div>
 
-      <p>Contact</p>
     </div>
 
   </div>
@@ -168,7 +182,11 @@
       $('.partners-slider').slick({
         infinite: true,
         slidesToShow: 3,
-        slidesToScroll: 1
+        slidesToScroll: 3,
+        prevArrow: '.partners-prev',
+        nextArrow: '.partners-next',
+        autoplay: true,
+        autoplaySpeed: 4000
       });
 
       /* Video Youtube
