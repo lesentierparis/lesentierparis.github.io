@@ -279,6 +279,64 @@ a.partners-item img {
   color: #fff;
 }
 
+@media only screen and (max-width: 768px) {
+  .partners .page-title {
+    font-size: 3em;
+    font-weight: 300;
+  }
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -45px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+.slick-dots li.slick-active button:before {
+  opacity: .75;
+  color: black;
+}
+.slick-dots li button:before {
+  font-size: 20px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  text-align: center;
+  opacity: .25;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* La verite */
 .la-verite {
   background: url(../images/la_verite.jpeg);
@@ -295,6 +353,7 @@ a.partners-item img {
   position: relative;
   text-align: center;
   width: 630px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -370,6 +429,12 @@ a.partners-item img {
 }
 .cd-headline b.is-visible {
   visibility: visible;
+}
+
+@media only screen and (max-width: 767px) {
+  .preloader .inner-preloader span{
+    font-size: 4em;
+  }
 }
 
 /* cd-headline

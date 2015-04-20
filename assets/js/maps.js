@@ -69,20 +69,21 @@ function drawInfobox(category, infoboxContent, json, i){
 }
 
 function createHomepageGoogleMap(_latitude,_longitude,json){
-  if (google.maps) {
-    console.log('Google loaded');
-    gMap();
-  } else {
-    console.log('Google loading');
-    setTimeout(function () {
-      createHomepageGoogleMap(_latitude,_longitude,json);
-    }, 100);
+  var zoom = 18;
+
+  if ( $(window).width() <= 1000 ) {
+    zoom = 17;
   }
+  if ( $(window).width() <= 500 ) {
+    zoom = 16;
+  }
+
+  gMap();
 
   function gMap(){
     var mapCenter = new google.maps.LatLng(_latitude, _longitude);
     var mapOptions = {
-      zoom: 18,
+      zoom: zoom,
       center: mapCenter,
       disableDefaultUI: true,
       scrollwheel: false,

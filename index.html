@@ -67,6 +67,10 @@
         </div>
       </div>
 
+      <p class="btn-next-slide">
+        <i class="glyphicon glyphicon-chevron-down"></i>
+      </p>
+
       <div class="video-title">
 
         <h1>lesentier</h1>
@@ -132,19 +136,23 @@
       <div class="partners-footer">
         <h2>Contact</h2>
 
-        <a class="contact-infos" href="https://twitter.com/meetlesentier">
-          @meetlesentier
-        </a>
-        |
-        <a class="contact-infos" href="tel:+33625320678">
-          <i class="glyphicon glyphicon-earphone"></i>
-          06 25 32 06 78
-        </a>
-        |
-        <a class="contact-infos" href="mailto:sofian@lesentier.paris">
-          <i class="glyphicon glyphicon-envelope"></i>
-          sofian@lesentier.paris
-        </a>
+        <p>
+          <a class="contact-infos" href="https://twitter.com/meetlesentier">
+            @meetlesentier
+          </a>
+          |
+          <a class="contact-infos" href="tel:+33625320678">
+            <i class="glyphicon glyphicon-earphone"></i>
+            06 25 32 06 78
+          </a>
+          |
+          <a class="contact-infos" href="mailto:sofian@lesentier.paris">
+            <i class="glyphicon glyphicon-envelope"></i>
+            sofian@lesentier.paris
+          </a>
+        </p>
+
+        <p>© Le Sentier 2015</p>
       </div>
 
     </div>
@@ -152,7 +160,7 @@
   </div>
 
   <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
-  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;libraries=places&amp;iwloc=&amp;"></script>
   <script type="text/javascript" src="assets/js/infobox.js"></script>
   <script type="text/javascript" src="assets/js/richmarker-compiled.js"></script>
   <script type="text/javascript" src="assets/js/markerclusterer.js"></script>
@@ -181,12 +189,33 @@
       ----------------------------------------------------------------------*/
       $('.partners-slider').slick({
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 3,
         prevArrow: '.partners-prev',
         nextArrow: '.partners-next',
         autoplay: true,
-        autoplaySpeed: 4000
+        autoplaySpeed: 4000,
+        responsive: [{
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        }, {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        }, {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }]
       });
 
       /* Video Youtube
@@ -200,10 +229,13 @@
           mute: true
         });
       }
+
+      /* Video Youtube
+      ----------------------------------------------------------------------*/
       $('#fullpage').fullpage({
-        navigation: true,
+        navigation: $(window).width() >= 500 ? true : false,
         navigationPosition: 'right',
-        navigationTooltips: ['Home', 'Map', 'Partners and contacts'],
+        navigationTooltips: ['Home', 'A propos', 'Carte', 'Partners and contacts'],
         scrollOverflow: true
       });
 
@@ -211,7 +243,8 @@
         $.fn.fullpage.moveSectionDown();
       });
 
-      /* start preloader */
+      /* Start preloader
+      ----------------------------------------------------------------------*/
       $('.preloader').addClass('startLoad')
 
 
