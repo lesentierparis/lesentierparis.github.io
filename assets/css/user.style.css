@@ -169,6 +169,16 @@ body {
 
 /* Map
 -------------------------------------------------------------------------*/
+.map-header {
+  position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+  background: rgba(219, 76, 34, 0.8);
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
 .map-logo {
   position: absolute;
     bottom: 0;
@@ -178,14 +188,17 @@ body {
   margin: 0;
   padding: 20px;
 }
+.map-header h2,
 .map-logo h2 {
-  font-family: 'kilogramregular', sans-serif;
   color: white;
   margin: 0;
   letter-spacing: 1px;
   outline: none;
   font-weight: normal;
   text-transform: uppercase;
+}
+.map-logo h2 {
+  font-family: 'kilogramregular', sans-serif;
 }
 
 .btn-next-slide {
@@ -348,13 +361,27 @@ a.partners-item img {
 
 .overlay-content {
   z-index: 10;
-  font-size: 16px;
   color: white;
   position: relative;
   text-align: center;
-  width: 630px;
   max-width: 100%;
-  margin: 0 auto;
+}
+
+.laverite-links {
+  padding: 10px 8px;
+}
+
+.laverite-links a {
+  background-color: #fff;
+  padding: 10px 8px;
+  margin-top: 20px;
+}
+
+.max-650 {
+  margin: 0 auto 50px;
+  width: 650px;
+  font-size: 16px;
+  max-width: 100%;
 }
 
 /* Preloader

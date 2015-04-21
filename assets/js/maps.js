@@ -1,7 +1,23 @@
 "use strict";
 var $ = jQuery.noConflict();
 
-var mapStyles = [ {"featureType":"road","elementType":"labels","stylers":[{"visibility":"simplified"},{"lightness":20}]},{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"on"},{"lightness":10}]},{"featureType":"road.local","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":50}]},{"featureType":"water","elementType":"all","stylers":[{"hue":"#a1cdfc"},{"saturation":30},{"lightness":49}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"hue":"#f49935"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"hue":"#fad959"}]}, {featureType:'road.highway',elementType:'all',stylers:[{hue:'#dddbd7'},{saturation:-92},{lightness:60},{visibility:'on'}]}, {featureType:'landscape.natural',elementType:'all',stylers:[{hue:'#c8c6c3'},{saturation:-71},{lightness:-18},{visibility:'on'}]},  {featureType:'poi',elementType:'all',stylers:[{hue:'#d9d5cd'},{saturation:-70},{lightness:20},{visibility:'on'}]} ];
+var mapStyles = [
+
+  {"featureType": "poi","stylers": [{ "visibility": "off" }]},
+  {"featureType":"road","elementType":"labels","stylers":[{"visibility":"simplified"},{"lightness":20}]},
+  {"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},
+  {"featureType":"landscape.man_made","elementType":"all","stylers":[{"visibility":"on"}]},
+  {"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"on"},{"lightness":10}]},
+  {"featureType":"road.local","elementType":"all","stylers":[{"visibility":"on"}]},
+  {"featureType":"road.local","elementType":"all","stylers":[{"visibility":"on"}]},
+  {"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"simplified"}]},
+  {"featureType":"road.arterial","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":50}]},
+  {"featureType":"water","elementType":"all","stylers":[{"hue":"#a1cdfc"},{"saturation":30},{"lightness":49}]},
+  {"featureType":"road.highway","elementType":"geometry","stylers":[{"hue":"#f49935"}]},
+  {"featureType":"road.arterial","elementType":"geometry","stylers":[{"hue":"#fad959"}]},
+  {"featureType":'road.highway',elementType:'all',stylers:[{hue:'#dddbd7'},{saturation:-92},{lightness:60},{visibility:'on'}]},
+  {"featureType":'landscape.natural',elementType:'all',stylers:[{hue:'#c8c6c3'},{saturation:-71},{lightness:-18},{visibility:'on'}]}
+];
 
 // Set map height to 100% ----------------------------------------------------------------------------------------------
 
@@ -30,6 +46,8 @@ function drawInfobox(category, infoboxContent, json, i){
     else                        { id = '' }
   if(json.data[i].url)            { var url = json.data[i].url }
     else                        { url = '' }
+  if(json.data[i].urlTwitter)            { var urlTwitter = json.data[i].urlTwitter }
+    else                        { urlTwitter = '' }
   if(json.data[i].type)           { var type = json.data[i].type }
     else                        { type = '' }
   if(json.data[i].title)          { var title = json.data[i].title }
@@ -47,9 +65,9 @@ function drawInfobox(category, infoboxContent, json, i){
         // '<div class="item-specific">' + drawItemSpecific(category, json, i) + '</div>' +
         '<div class="overlay">' +
           '<div class="wrapper">' +
-            '<a href="#" class="quick-view" data-toggle="modal" data-target="#modal" id="' + id + '">Quick View</a>' +
+            '<a target="_blank" href="' + url +  '" class="detail">Site web</a>' +
             '<hr>' +
-            '<a href="' + url +  '" class="detail">Go to Detail</a>' +
+            '<a target="_blank" href="' + urlTwitter +  '" class="detail">Page twitter</a>' +
           '</div>' +
         '</div>' +
         '<a href="' + url +  '" class="description">' +

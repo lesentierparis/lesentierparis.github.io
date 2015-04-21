@@ -172,32 +172,32 @@ $(document).ready(function($) {
 
 //  iCheck -------------------------------------------------------------------------------------------------------------
 
-    if ($('.checkbox').length > 0) {
-        $('input').iCheck();
-    }
+    // if ($('.checkbox').length > 0) {
+    //     $('input').iCheck();
+    // }
 
-    if ($('.radio').length > 0) {
-        $('input').iCheck();
-    }
+    // if ($('.radio').length > 0) {
+    //     $('input').iCheck();
+    // }
 
     $('body').addClass('page-fade-in');
 
-    $('a').on('click', function (e) {
-        var attr = $(this).attr('href');
-        //alert( $(this).attr('href') );
-        if ( attr.indexOf('#') != 0 ) {
-            e.preventDefault();
-            var goTo = this.getAttribute("href");
-            $('body').removeClass('page-fade-in');
-            $('body').addClass('page-fade-out');
-            setTimeout(function(){
-                window.location = goTo;
-            },200);
-        }
-        else if ( $(this).attr('href') == '#' ) {
-            e.preventDefault();
-        }
-    });
+    // $('a').on('click', function (e) {
+    //     var attr = $(this).attr('href');
+    //     //alert( $(this).attr('href') );
+    //     if ( attr.indexOf('#') != 0 ) {
+    //         e.preventDefault();
+    //         var goTo = this.getAttribute("href");
+    //         $('body').removeClass('page-fade-in');
+    //         $('body').addClass('page-fade-out');
+    //         setTimeout(function(){
+    //             window.location = goTo;
+    //         },200);
+    //     }
+    //     else if ( $(this).attr('href') == '#' ) {
+    //         e.preventDefault();
+    //     }
+    // });
 
 //  Dropzone -----------------------------------------------------------------------------------------------------------
 

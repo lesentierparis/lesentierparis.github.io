@@ -47,7 +47,7 @@
 
     <div class="section">
 
-      <div class="container-back back-title">
+      <!-- <div class="container-back back-title">
         <div class="inner-container-back">
           <div class="content-container-back">
             <div class="container-fluid">
@@ -65,7 +65,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <p class="btn-next-slide">
         <i class="glyphicon glyphicon-chevron-down"></i>
@@ -91,8 +91,38 @@
     <div class="section">
 
       <div class="overlay-content">
-        <h1 class="page-title">A PROPOS</h1>
-        <p>"Le Sentier" a pour mission de créer des ponts entre les lieux d'innovation du quartier, afin d'en favoriser l'exploration.</p>
+        <div class="max-650">
+          <h1 class="page-title">A PROPOS</h1>
+          <p>"Le Sentier" a pour mission de créer des ponts entre les lieux d'innovation du quartier, afin d'en favoriser l'exploration.</p>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h2>Cartography / exploration</h2>
+              <p><strong>Mission:</strong> Répertorier les lieux et leur amener un maximum de visibilité.</p>
+              <p class="laverite-links">
+                <a class="btn btn-default" href="mailto:sofian@lesentier.paris">Nous aider</a>
+              </p>
+            </div>
+
+            <div class="col-md-4">
+              <h2>Learning expeditions</h2>
+              <p><strong>Mission:</strong> Permettre aux grands entreprises de s’imerger dans le monde des starts-ups.</p>
+              <p class="laverite-links">
+                <a class="btn btn-default" href="mailto:sofian@lesentier.paris">Nous contacter</a>
+              </p>
+            </div>
+
+            <div class="col-md-4">
+              <h2>Séminaires d’innovation</h2>
+              <p><strong>Mission:</strong> Création de séminaires pédagogiques pour les étudiants.</p>
+              <p class="laverite-links">
+                <a class="btn btn-default" href="mailto:sofian@lesentier.paris">Nous contacter</a>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="bg-box la-verite">
         <div class="overlay"></div>
@@ -102,9 +132,14 @@
 
     <div class="section">
       <div class="map-canvas">
+
         <!-- Map -->
         <div class="map">
           <div id="map" class="has-parallax"></div>
+        </div>
+
+        <div class="map-header">
+          <h2>Les lieux du sentier</h2>
         </div>
 
         <div class="map-logo">
@@ -260,39 +295,13 @@
           "location": "39 Rue du Caire",
           "latitude": 48.8676918,
           "longitude": 2.3497565,
-          "url": "item-detail.html",
+          "url": "https://www.numa.paris/",
+          "urlTwitter": "https://twitter.com/numaparis",
           "type": "Tech",
           "type_icon": "assets/noir-big.jpg",
           "gallery":[
-            "http://placehold.it/300x200",
-            "http://placehold.it/300x200"
-          ],
-          "features":[
-            "Free Parking",
-            "Cards Accepted",
-            "Wi-Fi",
-            "Air Condition",
-            "Reservations",
-            "Teambuildings",
-            "Places to seat"
-          ],
-          "date_created": "2014-11-03",
-          // "price": "$2500",
-          "featured": 0,
-          "color": "",
-          "person_id": 1,
-          "year": 1980,
-          "special_offer": 0,
-          "item_specific":{
-            "bedrooms": 2,
-            "bathrooms": 2,
-            "rooms": 4,
-            "garages": 1,
-            "area": 240
-          },
-          "description": "Curabitur odio nibh, luctus non pulvinar a, ultricies ac diam. Donec neque massa, viverra interdum eros ut, imperdiet pellentesque mauris. Proin sit amet scelerisque risus. Donec semper semper erat ut mollis. Curabitur suscipit, justo eu dignissim lacinia, ante sapien pharetra duin consectetur eros augue sed ex. Donec a odio rutrum, hendrerit sapien vitae, euismod arcu.",
-          "last_review": "Curabitur odio nibh, luctus non pulvinar a, ultricies ac diam. Donec neque massa, viverra interdum eros ut, imperdiet",
-          "last_review_rating": 5
+            "assets/images/numa-gallery-1.jpg"
+          ]
         },
         {
           "id": 2,
@@ -301,24 +310,15 @@
           "location": "16 Rue du Caire",
           "latitude": 48.8675012,
           "longitude": 2.3512478,
-          "url": "item-detail.html",
+          "url": "http://player.paris/",
+          "urlTwitter": "https://twitter.com/playerparis",
           "type": "Intelligence collaborative",
           "type_icon": "assets/player-small.png",
           "rating": 5,
-          "price": "NEW",
+          // "price": "NEW",
           "gallery":[
-            "http://placehold.it/300x200"
-          ],
-          "color": "",
-          "item_specific":{
-            "menu": "$6.50",
-            "offer1": "Chicken wings",
-            "offer1_price": "4.50",
-            "offer2": "Mushroom ragout",
-            "offer2_price": "3.60",
-            "offer3": "Nice salad with tuna, beans and hard-boiled egg",
-            "offer3_price": "1.20"
-          }
+            "assets/images/player_large.jpg"
+          ]
         },
         {
           "id": 3,
@@ -327,12 +327,13 @@
           "location": "226 Rue Saint-Denis",
           "latitude": 48.868451,
           "longitude": 2.352168,
-          "url": "item-detail.html",
+          "url": "http://lapaillasse.org/",
+          "urlTwitter": "https://twitter.com/lapaillasse",
           "type": "FabLab",
           "type_icon": "assets/lapaillasse.jpeg",
           "rating": 2,
           "gallery":[
-            "http://placehold.it/300x200"
+            "assets/images/paillasse_large.jpg"
           ],
           "color": ""
         },
@@ -342,12 +343,13 @@
           "location": "3 Rue Papin",
           "latitude": 48.866876,
           "longitude": 2.354024,
-          "url": "item-detail.html",
+          "url": "http://www.residencecreatis.fr/",
+          "urlTwitter": "https://twitter.com/creatis_",
           "type": "Co-working",
           "type_icon": "assets/creatis.png",
           "rating": 0,
           "gallery":[
-            "http://placehold.it/300x200"
+            "assets/images/creatis_large.jpg"
           ],
           "color": ""
         }]
