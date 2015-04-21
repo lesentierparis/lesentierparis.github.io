@@ -245,6 +245,7 @@ a.partners-item img {
 
 .partners-prev,
 .partners-next {
+  display: block;
   font-size: 20px;
   line-height: 1.2;
   position: absolute;
@@ -256,6 +257,13 @@ a.partners-item img {
   opacity: .6;
   -webkit-transition: all 0.3s ease-out;
           transition: all 0.3s ease-out;
+}
+
+@media screen and (min-width: 1024px) {
+  .partners-prev,
+  .partners-next {
+    display: none;
+  }
 }
 .partners-prev:hover,
 .partners-next:hover {
