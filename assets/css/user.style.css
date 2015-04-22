@@ -3,8 +3,34 @@ body {
   font-weight: 300;
 }
 
+.about-container {
+  background-color: #fff;
+  color: #000;
+  padding: 70px 100px;
+}
+.about-container h2 {
+  font-weight: normal;
+  font-size: 14px;
+  margin-top: 0;
+}
+.about-container .about-paragraph {
+  color: #979797
+}
+.about-container .btn-default {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.separator {
+  margin: 35px auto;
+  width: 96px;
+  height: 4px;
+  background-color: #fff;
+}
+
 .page-title {
-  font-size: 4.5em;
+  font-size: 24px;
   letter-spacing: 0.025em;
   margin: 26px 0 21px 0;
   text-transform: uppercase;
@@ -224,6 +250,10 @@ body {
 /* Partner slider */
 .partners .page-title {
   color: #fff;
+  position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 .partners-wrapper {
   position: relative;
@@ -282,22 +312,33 @@ a.partners-item img {
     bottom: 0;
     right: 0;
     left: 0;
-  background: rgba(219, 76, 34, 0.8);
-  margin: 0;
+  background: #fff;
+  margin: 0 auto;
   padding: 20px;
   color: #fff;
+  width: 535px;
+  max-width: 100%;
+  color: rgb(219, 76, 34);
 }
 .partners-footer h2 {
-  font-family: 'kilogramregular', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: white;
-  margin: 0;
+  color: #000;
+  font-size: 13px;
+  margin: 0 0 10px;
   letter-spacing: 1px;
   outline: none;
   font-weight: normal;
   text-transform: uppercase;
 }
 .partners-footer .contact-infos {
-  color: #fff;
+  color: rgb(219, 76, 34);
+  font-size: 15px;
+}
+.parnters-footer__copy {
+  color: #979797;
+  margin-bottom: 0;
+  font-size: 12px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -360,11 +401,11 @@ a.partners-item img {
 
 /* La verite */
 .la-verite {
-  background: url(../images/la_verite.jpeg);
-  background-position: center center;
+  /*background: url(../images/la_verite.jpeg);
+  background-position: center center;*/
 }
 .la-verite .overlay {
-  background: rgba(219, 76, 34, 0.8);
+  background: rgb(219, 76, 34);
 }
 
 .overlay-content {
@@ -376,7 +417,8 @@ a.partners-item img {
 }
 
 .laverite-links {
-  padding: 10px 8px;
+  padding: 10px 8px 0;
+  margin: 0;
 }
 
 .laverite-links a {
