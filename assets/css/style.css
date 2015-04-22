@@ -4738,7 +4738,7 @@ body.map-fullscreen #map {
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  background-color: #ff513f;
+  background-color: rgb(219, 76, 34);
   color: #fff;
 }
 .btn.btn-default:hover, select.btn-default:hover {
