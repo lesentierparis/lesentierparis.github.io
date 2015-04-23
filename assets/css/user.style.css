@@ -411,11 +411,10 @@ a.partners-item img {
 
 /* La verite */
 .la-verite {
-  /*background: url(../images/la_verite.jpeg);
-  background-position: center center;*/
+  /*background: rgb(219, 76, 34) url(../pattern.png) 0 0 repeat;*/
 }
 .la-verite .overlay {
-  background: rgb(219, 76, 34);
+  background: rgb(219, 76, 34) url(../pattern.png) 0 0 repeat;
 }
 
 .overlay-content {
