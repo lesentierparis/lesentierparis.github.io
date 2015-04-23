@@ -473,7 +473,7 @@ a.partners-item img {
   text-transform: uppercase;
 }
 .preloader .inner-preloader .cd-headline span {
-  font-size: 1em;
+  font-size: 1.2em;
 }
 /* line 108, ../sass/style.scss */
 .preloader .inner-preloader span::before {
@@ -550,13 +550,13 @@ a.partners-item img {
 }
 @media only screen and (min-width: 768px) {
   .cd-headline {
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: 300;
   }
 }
 @media only screen and (min-width: 1170px) {
   .cd-headline {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 }
 
