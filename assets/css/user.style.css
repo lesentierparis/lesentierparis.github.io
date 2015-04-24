@@ -1,9 +1,7 @@
-.replacement-bg-youtube {
-  background-color: rgb(219, 76, 34);
-}
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+  background-color: rgb(219, 76, 34);
 }
 
 .about-container {
