@@ -55,6 +55,19 @@ body {
   }
 }
 
+.btn-propose-place {
+  display: block;
+  background: #fff;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+@media (min-width: 450px) {
+  .btn-propose-place {
+    float: right;
+    margin-bottom: 0;
+  }
+}
+
 /* form */
 
 /* Notify Page
