@@ -101,6 +101,7 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
   function gMap(){
     var mapCenter = new google.maps.LatLng(_latitude, _longitude);
     var mapOptions = {
+      draggable: $(window).width() >= 450 ? true : false,
       zoom: zoom,
       center: mapCenter,
       disableDefaultUI: true,
