@@ -87,7 +87,7 @@ function drawInfobox(category, infoboxContent, json, i){
 }
 
 function createHomepageGoogleMap(_latitude,_longitude,json){
-  var zoom = 18;
+  var zoom = 17;
 
   if ( $(window).width() <= 1000 ) {
     zoom = 17;
@@ -248,18 +248,18 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
 
     // Create marker clusterer -----------------------------------------------------------------------------------------
 
-    var clusterStyles = [
-      {
-        url: 'assets/img/cluster.png',
-        height: 34,
-        width: 34
-      }
-    ];
+    // var clusterStyles = [
+    //   {
+    //     url: 'assets/img/cluster.png',
+    //     height: 34,
+    //     width: 34
+    //   }
+    // ];
 
-    var markerCluster = new MarkerClusterer(map, newMarkers, { styles: clusterStyles, maxZoom: 19 });
-    markerCluster.onClick = function(clickedClusterIcon, sameLatitude, sameLongitude) {
-      return multiChoice(sameLatitude, sameLongitude, json);
-    };
+    // var markerCluster = new MarkerClusterer(map, newMarkers, { styles: clusterStyles, maxZoom: 19 });
+    // markerCluster.onClick = function(clickedClusterIcon, sameLatitude, sameLongitude) {
+    //   return multiChoice(sameLatitude, sameLongitude, json);
+    // };
 
     // Dynamic loading markers and data from JSON ----------------------------------------------------------------------
 
