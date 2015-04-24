@@ -274,7 +274,7 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
                 if( !visibleArray[i].content.className ){
                   visibleArray[i].setMap(map);
                   visibleArray[i].content.className += 'bounce-animation marker-loaded';
-                  markerCluster.repaint();
+                  // markerCluster.repaint();
                 }
               }
             }, i * 50);
