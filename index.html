@@ -280,14 +280,21 @@
 
       /* Video Youtube
       ----------------------------------------------------------------------*/
-      if($(".bg-youtube-video").length>0) {
+      var shouldPlayVideo = $(window).width() > 450;
 
+      if (shouldPlayVideo) {
         $('.bg-youtube-video .overlay').tubular({
           //videoId: 'NgjaTlCWjJc?list=UUQJ-o5gNpMg8mQ9eVJUkkWQ',
           videoId: 'OWbptCngmSQ',
           start: 3,
           mute: true
         });
+
+      } else {
+        $('.part-0').addClass('replacement-bg-youtube');
+      }
+
+
       }
 
       /* Video Youtube
