@@ -80,10 +80,19 @@ form.mailchimp,
 .notify-form-file {
   height: 50px;
   margin: 10px auto 40px;
-  max-width: 455px;
+  max-width: 445px;
   position: relative;
-  width: 100%;
+  width: 290px;
 }
+
+@media (min-width: 450px) {
+  form.mailchimp,
+  .notify-form-file {
+    max-width: 455px;
+    width: 100%;
+  }
+}
+
 /* line 648, ../sass/style.scss */
 form.mailchimp button[type="submit"],
 form.mailchimp .form-group,
@@ -97,11 +106,18 @@ form.mailchimp input[type="email"],
   background: none;
   border-radius: 0;
   height: 50px;
-  width: 315px;
+  width: 220px;
   border: 1px solid #fff;
   border-right: none;
   color: #fff;
 }
+@media (min-width: 450px) {
+  form.mailchimp input[type="email"],
+  .notify-form-file input[type="email"] {
+    width: 315px;
+  }
+}
+
 /* line 659, ../sass/style.scss */
 form.mailchimp input[type="submit"],
 form.mailchimp button,
@@ -112,7 +128,15 @@ form.mailchimp button,
   float: left;
   height: 50px;
   margin: 0;
-  width: 135px;
+  width: 70px;
+}
+@media (min-width: 450px) {
+  form.mailchimp input[type="submit"],
+  form.mailchimp button,
+  .notify-form-file input[type="submit"],
+  .notify-form-file button {
+    width: 135px;
+  }
 }
 /* line 666, ../sass/style.scss */
 form.mailchimp input[type="submit"].cl-effect-11::before,
