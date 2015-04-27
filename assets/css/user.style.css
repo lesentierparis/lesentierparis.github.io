@@ -62,9 +62,10 @@ body {
   padding: 8px 10px;
   margin-bottom: 10px;
 }
-@media (min-width: 450px) {
+@media (min-width: 550px) {
   .btn-propose-place {
-    float: right;
+    position: absolute;
+      right: 20px;
     margin-bottom: 0;
   }
 }
@@ -75,7 +76,7 @@ body {
 ---------------------------------------------------------------------*/
 /* General settings Notify Forms ------ */
 /* line 640, ../sass/style.scss */
-.mailchimp,
+form.mailchimp,
 .notify-form-file {
   height: 50px;
   margin: 10px auto 40px;
@@ -84,14 +85,14 @@ body {
   width: 100%;
 }
 /* line 648, ../sass/style.scss */
-.mailchimp button[type="submit"],
-.mailchimp .form-group,
+form.mailchimp button[type="submit"],
+form.mailchimp .form-group,
 .notify-form-file button[type="submit"],
 .notify-form-file .form-group {
   float: left;
 }
 /* line 651, ../sass/style.scss */
-.mailchimp input[type="email"],
+form.mailchimp input[type="email"],
 .notify-form-file input[type="email"] {
   background: none;
   border-radius: 0;
@@ -102,8 +103,8 @@ body {
   color: #fff;
 }
 /* line 659, ../sass/style.scss */
-.mailchimp input[type="submit"],
-.mailchimp button,
+form.mailchimp input[type="submit"],
+form.mailchimp button,
 .notify-form-file input[type="submit"],
 .notify-form-file button {
   background: none;
@@ -114,14 +115,14 @@ body {
   width: 135px;
 }
 /* line 666, ../sass/style.scss */
-.mailchimp input[type="submit"].cl-effect-11::before,
-.mailchimp button.cl-effect-11::before,
+form.mailchimp input[type="submit"].cl-effect-11::before,
+form.mailchimp button.cl-effect-11::before,
 .notify-form-file input[type="submit"].cl-effect-11::before,
 .notify-form-file button.cl-effect-11::before {
   padding: 11px 0 10px 43px;
 }
 /* line 671, ../sass/style.scss */
-.mailchimp .form-message span,
+form.mailchimp .form-message span,
 .notify-form-file .form-message span {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 2px;
@@ -138,11 +139,18 @@ body {
 
 /* Mailchimp form */
 /* line 688, ../sass/style.scss */
-.mailchimp {
+form.mailchimp {
   position: relative;
 }
+form.mailchimp button {
+  border: 1px solid #fff;
+  color: #fff;
+}
+form.mailchimp button:hover {
+  background-color: rgba(255, 255, 255, .2);
+}
 /* line 691, ../sass/style.scss */
-.mailchimp label[for="mce-EMAIL"] {
+form.mailchimp label[for="mce-EMAIL"] {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 2px;
   bottom: -35px;
@@ -157,11 +165,11 @@ body {
   transition: all 0.1s ease-in-out 0.1s;
 }
 /* line 704, ../sass/style.scss */
-.mailchimp label[for="mce-EMAIL"].my-hide {
+form.mailchimp label[for="mce-EMAIL"].my-hide {
   opacity: 1;
 }
 /* line 709, ../sass/style.scss */
-.mailchimp label[for="mce-EMAIL"].error:before {
+form.mailchimp label[for="mce-EMAIL"].error:before {
   content: "*";
   font-size: 14px;
   left: 13px;

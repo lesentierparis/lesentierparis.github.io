@@ -172,7 +172,7 @@
       </div>
 
       <!-- Begin MailChimp Signup Form -->
-      <!-- <form action="//paris.us10.list-manage.com/subscribe/post?u=7e74e3a4aa19d31e50c4cb621&amp;id=5a6d9b98e5" method="post" name="mc-embedded-subscribe-form" class="validate mailchimp" target="_blank" novalidate="">
+      <form action="//paris.us10.list-manage.com/subscribe/post?u=7e74e3a4aa19d31e50c4cb621&amp;id=5a6d9b98e5" method="post" name="mc-embedded-subscribe-form" class="validate mailchimp" target="_blank" novalidate="">
         <div id="mc_embed_signup_scroll">
           <div class="mc-field-group form-group">
             <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label>
@@ -187,11 +187,11 @@
           </div>
           <div class="clear">
 
-          <button type="submit" value="Sent" class="btn btn-default cl-effect-11" name="subscribe" id="mc-embedded-subscribe">GO</button>
+          <button type="submit" value="Sent" class="cl-effect-11" name="subscribe" id="mc-embedded-subscribe">GO</button>
 
           </div>
         </div>
-      </form> -->
+      </form>
       <!--End mc_embed_signup-->
 
       <div class="partners-footer">
@@ -225,11 +225,11 @@
   <script type="text/javascript" src="assets/js/markerclusterer.js"></script>
   <script type="text/javascript" src="assets/js/custom.js"></script>
   <script type="text/javascript" src="assets/js/maps.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.hotkeys.js"></script>
   <script type="text/javascript" src="assets/js/slick.min.js"></script>
   <script type="text/javascript" src="assets/js/tubular.js"></script>
   <script type="text/javascript" src="assets/js/animated-tagline.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.3/jquery.fullPage.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.4/vendors/jquery.slimscroll.min.js"></script>
 
   <script>
 
@@ -300,8 +300,8 @@
       $('#fullpage').fullpage({
         navigation: $(window).width() >= 500 ? true : false,
         navigationPosition: 'right',
-        navigationTooltips: ['Home', 'A propos', 'Carte', 'Partners and contacts'],
-        scrollOverflow: true
+        navigationTooltips: ['Home', 'A propos', 'Carte', 'Partenaires'],
+        responsive: 450
       });
 
       $('.btn-next-slide').on('click', function () {

@@ -123,6 +123,12 @@
   };
 
   function keyHandler(handleObj) {
+
+    console.log('type: ', event.target.type);
+    if (event.target.type) {
+      return true;
+    }
+
     if (typeof handleObj.data === "string") {
       handleObj.data = {
         keys: handleObj.data
