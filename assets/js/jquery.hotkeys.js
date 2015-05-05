@@ -124,10 +124,6 @@
 
   function keyHandler(handleObj) {
 
-    if (event.target.type) {
-      return true;
-    }
-
     if (typeof handleObj.data === "string") {
       handleObj.data = {
         keys: handleObj.data
