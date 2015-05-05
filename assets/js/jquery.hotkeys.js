@@ -124,7 +124,6 @@
 
   function keyHandler(handleObj) {
 
-    console.log('type: ', event.target.type);
     if (event.target.type) {
       return true;
     }
