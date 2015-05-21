@@ -19,6 +19,13 @@ body {
     padding-bottom: 30px;
   }
 }
+
+@media (max-width: 450px) {
+  .they-support {
+    display: none;
+  }
+}
+
 .about-container h2 {
   font-weight: normal;
   font-size: 14px;
@@ -33,11 +40,24 @@ body {
   margin: 0 auto;
 }
 
-.separator {
-  margin: 35px auto;
+.partner-title {
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.partner-title .separator {
+  margin: 35px auto 0;
   width: 96px;
   height: 4px;
   background-color: #fff;
+}
+
+.landing-title-newsletter {
+  margin-top: 30px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 
 .page-title {
@@ -45,7 +65,7 @@ body {
   letter-spacing: 0.025em;
   margin: 26px 0 21px 0;
   text-transform: uppercase;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
 @media (max-width: 767px) {
@@ -442,6 +462,7 @@ form.mailchimp label[for="mce-EMAIL"].error:before {
 .partners-item {
   text-align: center;
   line-height: 160px;
+  padding: 10px;
 }
 a.partners-item img {
   display: inline-block;
